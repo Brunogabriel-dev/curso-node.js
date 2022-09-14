@@ -11,7 +11,7 @@ const cursos = ['Node JS', 'JavaScript', 'React Native'];
 
 // localhost:3000/curso
 server.get('/curso/:index', (req, res) => {
-  const { index } =req.params.;
+  const { index } =req.params;
 
   return res.json({ curso: `Curso: ${id}`});
 
