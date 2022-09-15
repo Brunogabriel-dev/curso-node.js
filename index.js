@@ -20,6 +20,11 @@ server.get('/cursos/:index', (req, res) => {
 
   return res.json(cursos[index]);
 
+});
+
+
+server.post('/curso', (req, res)=> {
+  const { name } = req.body;
 })
 
 server.listen(3000);
