@@ -34,5 +34,14 @@ server.post('/curso', (req, res)=> {
 });
 
 //Atualizando um curso
+server.put('/cursos/:index', (req, res)=>{
+  const { index } = req.params;
+  const { name } = req.body;
+
+  cursos[index] = name;
+
+  return res.json(cursos);
+  
+});
 
 server.listen(3000);
