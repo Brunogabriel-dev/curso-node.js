@@ -33,4 +33,6 @@ server.post('/curso', (req, res)=> {
   return res.json(cursos);
 });
 
+//Atualizando um curso
+
 server.listen(3000);
