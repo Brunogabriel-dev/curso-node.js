@@ -15,7 +15,6 @@ server.get('/cursos', (req, res)=> {
 });
 
 
-// localhost:3000/curso
 server.get('/cursos/:index', (req, res) => {
   const { index } =req.params;
 
