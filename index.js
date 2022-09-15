@@ -2,6 +2,8 @@ const express = require('express');
 
 const server = express();
 
+server.use(express.json());
+
 // Query params = ?nome=NodeJS
 // Route Params = /curso/2
 // Request Body = { nome: 'Nodejs', tipo: 'Backend' }
@@ -23,8 +25,12 @@ server.get('/cursos/:index', (req, res) => {
 });
 
 
+//Criando um novo curso
 server.post('/curso', (req, res)=> {
   const { name } = req.body;
-})
+  cursos.push(name);
+
+  return res.json(cursos);
+});
 
 server.listen(3000);
