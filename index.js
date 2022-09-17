@@ -46,6 +46,8 @@ server.put('/cursos/:index', (req, res)=>{
 
 
 //Excluindo algum curso
-
+server.delete('/cursos/:index', (req, res)=> {
+  const { index } = req.params;
+});
 
 server.listen(3000);
