@@ -41,7 +41,7 @@ server.get('/cursos/:index', (req, res) => {
 
 
 //Criando um novo curso
-server.post('/curso', (req, res)=> {
+server.post('/curso', checkCurso, (req, res)=> {
   const { name } = req.body;
   cursos.push(name);
 
@@ -49,7 +49,7 @@ server.post('/curso', (req, res)=> {
 });
 
 //Atualizando um curso
-server.put('/cursos/:index', (req, res)=>{
+server.put('/cursos/:index', checkCurso, (req, res)=>{
   const { index } = req.params;
   const { name } = req.body;
 
