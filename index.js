@@ -27,6 +27,15 @@ function checkCurso(req, res, next){
   return next();
 }
 
+function checkIndexCurso(req, res, next) {
+  const curso = cursos[req.params.index]
+  if(!curso){
+    return res.status(400).json({ error: "O usuario não existe"});
+
+  }
+  return next();
+}
+
 server.get('/cursos', (req, res)=> {
   return res.json(cursos);
 });
