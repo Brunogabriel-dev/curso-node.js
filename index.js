@@ -44,4 +44,8 @@ server.put('/cursos/:index', (req, res)=>{
   
 });
 
+
+//Excluindo algum curso
+
+
 server.listen(3000);
