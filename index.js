@@ -15,7 +15,17 @@ const cursos = ['Node JS', 'Java Script', 'React Native'];
 //Middleware Global
 server.use((req, res, next)=>{
   console.log('URL CHAMADA: ${req.url}');
-})
+
+  return next();
+});
+
+function checkCurso(req, res, next){
+  if(!req.body.name){
+    return res.status(400).json({ error: "Nome do curso é obrigatorio"});
+  }
+
+  return next();
+}
 
 server.get('/cursos', (req, res)=> {
   return res.json(cursos);
