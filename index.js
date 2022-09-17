@@ -14,7 +14,7 @@ const cursos = ['Node JS', 'Java Script', 'React Native'];
 
 //Middleware Global
 server.use((req, res, next)=>{
-  console.log('REQUISIÇÃO CHAMADA');
+  console.log('URL CHAMADA: ${req.url}');
 })
 
 server.get('/cursos', (req, res)=> {
