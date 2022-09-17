@@ -12,6 +12,11 @@ server.use(express.json());
 
 const cursos = ['Node JS', 'Java Script', 'React Native'];
 
+//Middleware Global
+server.use((req, res, next)=>{
+  console.log('REQUISIÇÃO CHAMADA');
+})
+
 server.get('/cursos', (req, res)=> {
   return res.json(cursos);
 });
